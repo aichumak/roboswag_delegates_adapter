@@ -13,7 +13,9 @@ dependencyResolutionManagement {
     }
 }
 gradle.ext.roboswag = [
-        'recyclerview-adapters'
+        'recyclerview-adapters',
+        'kotlin-extensions',
+        'logging'
 ]
 gradle.ext.roboswag.forEach { module ->
     include ":$module"
