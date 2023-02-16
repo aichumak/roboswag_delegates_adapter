@@ -2,6 +2,7 @@ package com.example.roboswagdelegateadapter.personal_data
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.roboswagdelegateadapter.BaseItem
 import com.example.roboswagdelegateadapter.databinding.ViewholderPersonalDataBinding
 import ru.touchin.roboswag.recyclerview_adapters.adapters.ItemAdapterDelegate
 

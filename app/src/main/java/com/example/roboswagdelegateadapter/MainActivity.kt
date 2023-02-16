@@ -3,9 +3,11 @@ package com.example.roboswagdelegateadapter
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roboswagdelegateadapter.databinding.ActivityMainBinding
 import com.example.roboswagdelegateadapter.personal_data.PersonalDataDelegate
 import com.example.roboswagdelegateadapter.personal_data.PersonalDataModel
+import com.example.roboswagdelegateadapter.reg_data.RegDataModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,10 +22,15 @@ class MainActivity : AppCompatActivity() {
 
         val delegateAdapter = PersonalDataDelegate(::makeToast)
         baseAdapter.addNewDelegate(delegateAdapter)
-        baseAdapter.submitList(listOf(PersonalDataModel(1, "Name", "user id", "initials")))
-        binding.apply {
-            rvMain.adapter = baseAdapter
-        }
+        binding.rvMain.layoutManager = LinearLayoutManager(this)
+        binding.rvMain.adapter = baseAdapter
+        baseAdapter.submitList(
+            listOf(
+                PersonalDataModel(1, "Name", "user id", "initials"),
+                RegDataModel(2, "Name", "user id"),
+                PersonalDataModel(3, "Name2", "user id3", "initials4")
+            )
+        )
     }
 
     private fun makeToast() {

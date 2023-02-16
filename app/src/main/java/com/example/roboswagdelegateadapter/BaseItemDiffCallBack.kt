@@ -1,16 +1,15 @@
 package com.example.roboswagdelegateadapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.roboswagdelegateadapter.personal_data.PersonalDataModel
 
-class BaseItemDiffCallBack : DiffUtil.ItemCallback<PersonalDataModel>() {
-    override fun areItemsTheSame(oldItem: PersonalDataModel, newItem: PersonalDataModel): Boolean {
+class BaseItemDiffCallBack : DiffUtil.ItemCallback<BaseItem>() {
+    override fun areItemsTheSame(oldItem: BaseItem, newItem: BaseItem): Boolean {
         return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: PersonalDataModel,
-        newItem: PersonalDataModel
+        oldItem: BaseItem,
+        newItem: BaseItem
     ): Boolean {
         return oldItem == newItem
     }
